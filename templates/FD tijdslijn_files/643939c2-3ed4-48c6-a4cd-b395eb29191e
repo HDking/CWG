@@ -1,0 +1,1 @@
+var v=document.vwdStreamerInstance;if(v){v.streamerImplementation.handleResponse([{m:"un",v:[6,2090.000000]},{m:"un",v:[7,-0.006536]},{m:"un",v:[4,17756.560000]},{m:"un",v:[5,-0.004597]}])};
