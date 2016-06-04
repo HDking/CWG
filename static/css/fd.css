@@ -1,0 +1,131 @@
+div.teads-inread div.teads-ui-components-label,
+div.teads-inboard div.teads-ui-components-label,
+div.teads-expand div.teads-ui-components-label {
+  font-family: 'Helvetica', Arial, sans-serif !important;
+  font-size: 11.5px !important;
+  color: #aaa;
+  text-align: center !important;
+  /*padding: 3px 0;*/
+  text-transform: uppercase !important;
+  height: 21px !important;
+  line-height: 21px !important;
+  letter-spacing: 0.3px !important;
+  font-weight: 300 !important;
+}
+
+div.teads-inread div.teads-ui-components-label::before,
+div.teads-inboard div.teads-ui-components-label::before,
+div.teads-impact div.teads-ui-components-label::before,
+div.teads-inread div.teads-ui-components-label::after,
+div.teads-inboard div.teads-ui-components-label::after,
+div.teads-impact div.teads-ui-components-label::after {
+  display: none !important;
+}
+
+div.teads-inread.sm-screen div.teads-ui-components-label,
+div.teads-inread.xs-screen div.teads-ui-components-label,
+div.teads-inboard.sm-screen div.teads-ui-components-label,
+div.teads-inboard.xs-screen div.teads-ui-components-label {
+  font-size: 10px !important;
+}
+
+div.teads-inread div.teads-ui-components-credits,
+div.teads-inboard div.teads-ui-components-credits,
+div.teads-expand div.teads-ui-components-credits {
+    font-family: 'Helvetica', Arial, sans-serif !important;
+    font-size: 11.5px !important;
+    color: #aaa !important;
+    text-align: right !important;
+    padding: 1px 0 !important;
+    height: 26px !important;
+    line-height: 26px !important;
+    padding-right: 4px !important;
+    letter-spacing: 0.3px !important;
+}
+
+div.teads-inread div.teads-ui-components-credits a span,
+div.teads-inboard div.teads-ui-components-credits a span,
+div.teads-expand div.teads-ui-components-credits a span,
+div.teads-inread div.teads-ui-components-credits a,
+div.teads-inboard div.teads-ui-components-credits a,
+div.teads-expand div.teads-ui-components-credits a {
+    font-family: 'Helvetica', Arial, sans-serif !important;
+    font-size: 11.5px !important;
+    box-shadow: none !important;
+    letter-spacing: 0.3px !important;
+}
+
+div.teads-inread.sm-screen div.teads-ui-components-credits a span,
+div.teads-inboard.sm-screen div.teads-ui-components-credits a span,
+div.teads-expand.sm-screen div.teads-ui-components-credits a span,
+div.teads-inread.sm-screen div.teads-ui-components-credits a,
+div.teads-inboard.sm-screen div.teads-ui-components-credits a,
+div.teads-expand.sm-screen div.teads-ui-components-credits a,
+div.teads-inread.xs-screen div.teads-ui-components-credits a span,
+div.teads-inboard.xs-screen div.teads-ui-components-credits a span,
+div.teads-expand.xs-screen div.teads-ui-components-credits a span,
+div.teads-inread.xs-screen div.teads-ui-components-credits a,
+div.teads-inboard.xs-screen div.teads-ui-components-credits a,
+div.teads-expand.xs-screen div.teads-ui-components-credits a {
+    font-family: 'Helvetica', Arial, sans-serif !important;
+    font-size: 9px !important;
+    box-shadow: none !important;
+    letter-spacing: 0.3px !important;
+}
+
+div.teads-inread.sm-screen div.teads-ui-components-credits,
+div.teads-inboard.xs-screen div.teads-ui-components-credits {
+    font-size: 9px !important;
+    letter-spacing: 0.3px !important;
+}
+
+div.teads-inread .teads-ui-components-credits a,
+div.teads-inboard .teads-ui-components-credits a,
+div.teads-expand .teads-ui-components-credits a {
+    color: #aaa !important;
+    text-decoration: none !important;
+    font-weight: 300 !important;
+    border: none !important;
+    letter-spacing: 0.3px !important;
+    /*
+     * From @jean-pierre.colomb comment on https://jira.teads.net/browse/TT-4076
+     * The gqjapan.jp website overrides <a> properties to add 2 orange squares
+     * which affects the credits link
+     */
+    background: none !important;
+    padding: 0 !important;
+}
+
+div.teads-inread.sm-screen .teads-ui-components-credits a,
+div.teads-inboard.sm-screen .teads-ui-components-credits a,
+div.teads-expand.sm-screen .teads-ui-components-credits a,
+div.teads-inread.xs-screen .teads-ui-components-credits a,
+div.teads-inboard.xs-screen .teads-ui-components-credits a,
+div.teads-expand.xs-screen .teads-ui-components-credits a{
+    font-size: 9px !important;
+    letter-spacing: 0.3px !important;
+}
+
+div.teads-inread div.teads-ui-components-credits span.teads-ui-components-credits-colored,
+div.teads-inboard div.teads-ui-components-credits span.teads-ui-components-credits-colored,
+div.teads-expand div.teads-ui-components-credits span.teads-ui-components-credits-colored {
+    color: #79BBE9 !important;
+}
+
+div.teads-inread div.teads-ui-components-credits span::before,
+div.teads-inboard div.teads-ui-components-credits span::before,
+div.teads-impact div.teads-ui-components-credits span::before,
+div.teads-inread div.teads-ui-components-credits span::after,
+div.teads-inboard div.teads-ui-components-credits span::after,
+div.teads-impact div.teads-ui-components-credits span::after {
+  display: none !important;
+}
+
+div.teads-inread div.teads-ui-components-credits a::before,
+div.teads-inboard div.teads-ui-components-credits a::before,
+div.teads-impact div.teads-ui-components-credits a::before,
+div.teads-inread div.teads-ui-components-credits a::after,
+div.teads-inboard div.teads-ui-components-credits a::after,
+div.teads-impact div.teads-ui-components-credits a::after {
+  display: none !important;
+}
