@@ -1,1 +1,0 @@
-var v=document.vwdStreamerInstance;if(v){v.streamerImplementation.handleResponse([{m:"s",v:["905256f4-aefd-457b-b35c-dabe1baac266"]},{m:"sr"},{m:"h"}])};
