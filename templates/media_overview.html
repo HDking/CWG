@@ -1,0 +1,72 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <h1>Overview of published articles</h1>
+    <p>FinCorp Hack timeline</p>
+    <h3>Add a new Article:</h3>
+    <form action="{{ url_for('add') }}" method ="post" class="add">
+        <label><strong>Title:</strong></label>
+        <input name="title" type="text">
+        <p><label><strong>Post:</strong></label>
+        <textarea name="post" rows="20" cols="120"></textarea></p>
+        <p><label><strong>Timeline Summary:</strong></label>
+        <textarea name="summary" rows="5" cols="120"></textarea></p>
+        <input class="button" type="submit" value="Save">
+    </form>
+    <br />
+    
+    <div class="entries">
+        <br>
+        <br>
+        <h2>Unpublished Articles:</h2>
+        <div class="datagrid">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="200px"><strong>Title</strong></th>
+                        <th width="400px"><strong>Post</strong></th>
+                    </tr>
+                </thead>
+                
+                {% for post in open_posts %}
+                <tr>
+                    <td width="200px"> {{ post.title }}</td>
+                    <td width="400px">{{ post.post[0:50] + '...' }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_article', task_id=post.task_id) }}">Delete</a>
+                        <a href="{{ url_for('publish', task_id=post.task_id) }}">Publish</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+    <div class="entries">
+        <br>
+        <br>
+        <h2>Published Articles:</h2>
+        <div class="datagrid">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="200px"><strong>Title</strong></th>
+                        <th width="400px"><strong>Post</strong></th>
+                    </tr>
+                </thead>
+                
+                {% for post in published_posts %}
+             
+                <tr>
+                    <td width="200px"> <a href="{{ url_for('show', task_id=post.task_id) }}" target="_blank">{{ post.title }}</a></td>
+                    <td width="400px"> {{ post.post[0:50] + '...' }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+{% endblock %}
