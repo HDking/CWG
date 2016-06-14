@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Crisis Center</title>
+        <meta http-equiv="refresh" content="30">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/crisis.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+        <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/grid.css') }}">-->
+    </head>
+    
+    <body>
+            <div class="timer">
+                <p><h1> Crisis Team Messages</h1></p>
+            </div>
+            
+            {% for message in messages %}
+            <div class="messages">
+                {% if message.type == 1 %}
+                    <div class="bs-callout bs-callout-danger" id="callout-badges-ie8-empty"> 
+                        <h2>Danger: {{ message.title }}</h2> 
+                        <p>
+                            {{ message.message }}
+                        </p>
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% elif message.type == 2 %}
+                    <div class="bs-callout bs-callout-success" id="callout-badges-ie8-empty"> 
+                        <h2>Success: {{ message.title }}</h2> 
+                        <p>{{ message.message }}
+                        </p> 
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% elif message.type == 3 %}
+                    <div class="bs-callout bs-callout-info" id="callout-badges-ie8-empty"> 
+                        <h2>Info: {{ message.title }}</h2> 
+                        <p>{{ message.message }}</p> 
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% elif message.type == 4 %}
+                    <div class="bs-callout bs-callout-warning" id="callout-badges-ie8-empty"> 
+                        <h2>Warning: {{ message.title }}</h2> 
+                        <p>{{ message.message }}</p> 
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            
+            
+           </div>
+    </body>
+</html>

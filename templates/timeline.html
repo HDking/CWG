@@ -1,5 +1,9 @@
 {% extends "template.html" %}
 <!-- timeline. hier aanvullingen maken -->
+{% block head %}
+    {{ super() }}
+    <meta http-equiv="refresh" content="30">
+{% endblock %}
 
 {% block content %}
 <div class="body">
@@ -8,8 +12,9 @@
 
 {% for article in articles %}
     <p xmlns="http://www.w3.org/1999/xhtml">{{ article.date[0:16] }}</p> 
-    <p xmlns="http://www.w3.org/1999/xhtml"><strong> {{ article.title }}</strong></p> 
-    <p xmlns="http://www.w3.org/1999/xhtml">{{ article.summary }} <a href="{{ url_for('show', task_id=article.task_id) }}" target="_blank">Read more...</a></p>   
+    <p xmlns="http://www.w3.org/1999/xhtml"><strong> {{ article.title }} </strong> - <a href="#"> ({{ article.reporter }})</a></p> 
+    <p xmlns="http://www.w3.org/1999/xhtml">{{ article.summary }} <a href="{{ url_for('show', task_id=article.task_id) }}" target="_blank">Read more...</a></p> 
+    <br />
 {% endfor %}
 
 <!-- end timeline --> 

@@ -1,0 +1,67 @@
+div {
+    display: block;
+}
+
+.bs-callout {
+    padding: 15px;
+    /*padding-left: 25px;*/
+    margin: 20px 0;
+    /*margin-left: 35px;*/
+    border: 1px solid #eee;
+    border-left-width: 10px;
+    border-radius: 3px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    display: block;
+}
+
+.bs-callout-danger{
+    border-left-color: #ff0000;
+    color: #ff0000;
+}
+
+.bs-callout-success{
+    border-left-color: #33cc33;
+    color: #33cc33;
+}
+
+.bs-callout-info{
+    border-left-color: #4db8ff;
+    color:#4db8ff;
+}
+
+.bs-callout-warning{
+    border-left-color: #ffcc00;
+    color: #ffcc00;
+}
+
+h2 {
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+
+p {
+    margin-top: 0px;
+    color: black;
+}
+
+.timer {
+    /*width:100%;*/
+    min-height: 12%;
+    padding-top: 25px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    /*padding-left: 300px;*/
+    border-bottom: 1px solid gray;
+}
+
+.messages{
+    width: 100%;
+}
+
+.dingen {
+    float: left;
+}
+

@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Facilitator Messages Received from Crisis Team</title>
+        <meta http-equiv="refresh" content="30">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/crisis.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+    </head>
+    
+    <body>
+            <div class="timer">
+                <p><h1> Received Messages from Crisis Team</h1></p>
+            </div>
+            
+            {% for message in messages %}
+            
+                {% if message.team == 1 %}
+                    {% set request = "Request advice from advisor pool" %}
+                {% elif message.team == 2 %}
+                    {% set request = "Request internal investigation" %}
+                {% elif message.team == 3 %}
+                    {% set request = "Shut Systems down" %}
+                {% elif message.team == 4 %}
+                    {% set request = "Isolate Systems Partially" %}
+                {% elif message.team == 5 %}
+                    {% set request = "internal Communications Stop to the outside" %}
+                {% elif message.team == 6 %}
+                    {% set request = "Issue an embargoed press release" %}
+                {% elif message.team == 7 %}
+                    {% set request = "Respond through open letter to news letter" %}
+                {% elif message.team == 8 %}
+                    {% set request = "Request Exclusive interview with the media to tell story" %}
+                {% elif message.team == 9 %}
+                    {% set request = "Release Press Release on own website" %}
+                {% elif message.team == 10 %}
+                    {% set request = "other" %}
+                {% endif %}
+            
+            <div class="messages">
+                {% if message.type == 1 %}
+                    <div class="bs-callout bs-callout-danger" id="callout-badges-ie8-empty"> 
+                        <h2>{{ request }}: {{ message.title }}</h2> 
+                        <p>
+                            {{ message.message }}
+                        </p>
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% elif message.type == 2 %}
+                    <div class="bs-callout bs-callout-success" id="callout-badges-ie8-empty"> 
+                        <h2>{{ request }}: {{ message.title }}</h2> 
+                        <p>{{ message.message }}
+                        </p> 
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% elif message.type == 3 %}
+                    <div class="bs-callout bs-callout-info" id="callout-badges-ie8-empty"> 
+                        <h2>{{ request }}: {{ message.title }}</h2> 
+                        <p>{{ message.message }}</p> 
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% elif message.type == 4 %}
+                    <div class="bs-callout bs-callout-warning" id="callout-badges-ie8-empty"> 
+                        <h2>{{ request }}: {{ message.title }}</h2> 
+                        <p>{{ message.message }}</p> 
+                        <h5> {{ message.date[0:16] }} </h5>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            
+            
+           </div>
+    </body>
+</html>

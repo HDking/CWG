@@ -1,0 +1,90 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <h1>Send a Message to the Teams</h1>
+    <p><a href="http://cyberwargame-hdking.c9users.io/timeline" target="_blank">FinCorp Hack timeline</a></p>
+    <p><a href="http://cyberwargame-hdking.c9users.io/crisis_center" target="_blank">Messages to Crisis Team</a></p>
+    <p><a href="http://cyberwargame-hdking.c9users.io/media_messages" target="_blank">Messages to Media Team</a></p>
+    <h2>Send a new Message:</h2>
+    <form action="{{ url_for('addMessage') }}" method ="post" class="add">
+        <label><strong>Team:</strong></label>
+        <select name="team" width="100px">
+            <option value="1">Crisis Team</option>
+            <option value="2">Media Team</option>
+        </select>
+        <br />
+        <br />
+        <label><strong>Header:</strong></label>
+        <input name="title" type="text">
+        <p><label><strong>Message:</strong></label>
+        <textarea name="message" rows="10" cols="120"></textarea></p>
+        <label>Type:</label>
+        <select name="type" width="100px">
+            <option value="1">Danger / Penalty</option>
+            <option value="2">Success / Reward</option>
+            <option value="3">Information</option>
+            <option value="4">Warning</option>
+        </select>
+        <br />
+        <br />
+        <input class="button" type="submit" value="Send!">
+    </form>
+    <br />
+    <br />
+    
+    <div class="entries">
+        <br>
+        <br>
+        <h2>Sent Messages Crisis Team</h2>
+        <div class="datagrid">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="150px"><strong>Title</strong></th>
+                        <th width="400px"><strong>Message</strong></th>
+                        <th width="150px"><strong>Date</strong></th>
+                    </tr>
+                </thead>
+                
+                {% for message in messages %}
+                <tr>
+                    <td width="150px"> {{ message.title }}</td>
+                    <td width="400px">{{ message.message[0:100] + '...' }}</td>
+                    <td width="150px">{{ message.date[0:16] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+    <div class="entries">
+        <br>
+        <br>
+        <h2>Sent Messages Media Team</h2>
+        <div class="datagrid">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="150px"><strong>Title</strong></th>
+                        <th width="400px"><strong>Message</strong></th>
+                        <th width="150px"><strong>Date</strong></th>
+                    </tr>
+                </thead>
+                
+                {% for message in media_messages %}
+                <tr>
+                    <td width="150px"> {{ message.title }}</td>
+                    <td width="400px">{{ message.message[0:100] + '...' }}</td>
+                    <td width="150px">{{ message.date[0:16] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    
+{% endblock %}

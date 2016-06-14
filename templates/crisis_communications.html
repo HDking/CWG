@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" class="article article-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Crisis Communications</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fd.screen.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/fd.print.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/fd.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/teads-format.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom2.css') }}">
+</head>
+
+
+<body style="background-color: #f2f2f2">
+    <div class="centered">
+        <section class="main">
+        <main>
+            <article class="full social-quotable">
+        <header>
+            <menu>
+            <span class="favorite" title="Favoriet" data-key="1091982" data-addurl="/add-favorite" data-deleteurl="/delete-favorite" data-title="Timeline FinCorp. Hack" data-date="9 februari 2015" data-url="#"></span>
+            </menu>
+            <!--<span class="title">Economy &amp; Internet</span>-->
+        </header>
+    
+
+        <!-- titel article -->
+<h1>Overview of Crisis Communications</h1>
+    <p><a href="http://cyberwargame-hdking.c9users.io/timeline" target="_blank">FinCorp Hack timeline</a></p>
+    <p><a href="http://cyberwargame-hdking.c9users.io/crisis_center" target="_blank">Messages to Crisis Team</a></p>
+    <h2>Send a new Message:</h2>
+    <form action="{{ url_for('addCrisisMessage') }}" method ="post" class="add">
+        <label>To:</label>
+        <select name="team" width="100px">
+            <option value="1">Request advice from advisor pool</option>
+            <option value="2">Request internal investigation</option>
+            <option value="3">Shut Systems down</option>
+            <option value="4">Isolate Systems Partially</option>
+            <option value="5">Internal Communications Stop to the outside</option>
+            <option value="6">Issue an embargoed press release</option>
+            <option value="7">Respond through open letter to news paper</option>
+            <option value="8">Request Exclusive interview with the media to tell story</option>
+            <option value="9">Release Press Release on own website</option>
+            <option value="10">Other</option>
+        </select>
+        <br />
+        <br />
+        <label><strong>Subject:</strong></label>
+        <input name="title" type="text">
+        <p><label><strong>Message:</strong></label>
+        <textarea name="message" rows="10" cols="120"></textarea></p>
+        <label>Urgency:</label>
+        <select name="type" width="100px">
+            <option value="1">Very High</option>
+            <option value="4">High</option>
+            <option value="3">Medium</option>
+            <option value="2">Low / Neutral</option>
+        </select>
+        <br />
+        <br />
+        <input class="button" type="submit" value="Send!">
+    </form>
+    <br />
+    
+
+    
+    <div class="entries">
+        <br>
+        <br>
+        <h2>Sent Messages:</h2>
+        <div class="datagrid">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="200px"><strong>Subject:</strong></th>
+                        <th width="250px"><strong>To:</strong></th>
+                        <th width="400px"><strong>Message:</strong></th>
+                    </tr>
+                </thead>
+                
+                {% for message in messages %}
+                <!--url_for('show', message_id=message.message_id)-->
+             
+                <tr>
+                    <td width="200px"> <a href="#" target="_blank">{{ message.title }}</a></td>
+                    {% if message.team==1 %}
+                        <td width="250px"> Public (press release)</td>
+                    {% elif message.team==2 %}
+                        <td width="250px"> Private email</td>
+                    {% elif message.team==3 %}
+                        <td width="250px"> Public letter to Financial Daily</td>
+                    {% else %}
+                        <td width="200px"> Other</td>
+                    {% endif %}
+                    <td width="400px"> {{ message.message }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+        <!-- end overview --> 
+
+    </article>
+        </main>
+    </section>
+    </div>
+
+</body>
+</html>
+        
+    
+        
+        
+        
+  

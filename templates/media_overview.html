@@ -2,11 +2,14 @@
 
 {% block content %}
     <h1>Overview of published articles</h1>
-    <p>FinCorp Hack timeline</p>
+    <p><a href="http://cyberwargame-hdking.c9users.io/timeline" target="_blank">FinCorp Hack timeline</a></p>
+    <p><a href="http://cyberwargame-hdking.c9users.io/media_messages" target="_blank">Messages to Media Team</a></p>
     <h3>Add a new Article:</h3>
     <form action="{{ url_for('add') }}" method ="post" class="add">
         <label><strong>Title:</strong></label>
         <input name="title" type="text">
+        <label><strong>Reporter Name:</strong></label>
+        <input name="reporter" type="text">
         <p><label><strong>Post:</strong></label>
         <textarea name="post" rows="20" cols="120"></textarea></p>
         <p><label><strong>Timeline Summary:</strong></label>
@@ -25,6 +28,7 @@
                     <tr>
                         <th width="200px"><strong>Title</strong></th>
                         <th width="400px"><strong>Post</strong></th>
+                        <th width="200px"><strong>Reporter</strong></th>
                     </tr>
                 </thead>
                 
@@ -32,6 +36,7 @@
                 <tr>
                     <td width="200px"> {{ post.title }}</td>
                     <td width="400px">{{ post.post[0:50] + '...' }}</td>
+                    <td width="200px"> {{ post.reporter }}</td>
                     <td>
                         <a href="{{ url_for('delete_article', task_id=post.task_id) }}">Delete</a>
                         <a href="{{ url_for('publish', task_id=post.task_id) }}">Publish</a>
